@@ -155,6 +155,7 @@ d)  Come up with a (research) question you want to answer with the data
     and briefly explain why you believe this is an interesting question
     within one sentence. It should be a question that can be answered
     with the dataset and using R.
+    Research question: Is the number of natural disasters increasing during the past century? This is an interesting question because we would like to know whether human activities and technological advance in past centry has laid more stress on our planet, as manifested by natural disasters.
 e)  Use R to answer your chosen question.
 f)  Create a meaningful plot / figure with the dataset. Make sure to
     provide a figure caption (via the chunk options / Rmarkdown) and
