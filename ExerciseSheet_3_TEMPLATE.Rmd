@@ -157,9 +157,23 @@ d)  Come up with a (research) question you want to answer with the data
     with the dataset and using R.
     Research question: Is the number of natural disasters increasing during the past century? This is an interesting question because we would like to know whether human activities and technological advance in past centry has laid more stress on our planet, as manifested by natural disasters.
 e)  Use R to answer your chosen question.
+From Figure 1. below, it can be seen that there is a rapid rise of the numbers of natural disasters all over the world. The increasing trend accelerated especially after 1960.
 f)  Create a meaningful plot / figure with the dataset. Make sure to
     provide a figure caption (via the chunk options / Rmarkdown) and
     correctly label the figure.
+    
+```{r, fig.cap="Line plot of the recorded number of natural disasters from 1990 to 2019, including drought, floods, extreme weather, extreme temperature, landslides, dry mass movements, wildfires, volcanic activity and earthquakes."}
+    library(ggplot2)
+disaster <- read.csv("Natural disasters from 1900 to 2019 - EMDAT (2020).csv")
+disaster %>% filter(Entity == "All natural disasters") %>% 
+    ggplot(aes(x = Year, y = Number.of.disasters..EMDAT..2019..)) +
+        geom_line() +
+        geom_point(size = 0.7) +
+    theme_classic() +
+    labs(x = "Year", y = "Number of all natural disasters",
+         title = "Number of natural disasters from 1900 to 2019") +
+    scale_x_continuous(breaks = seq(1900, 2019, by = 10))
+```
 
 ## Final Note
 
