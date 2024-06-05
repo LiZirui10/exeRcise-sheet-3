@@ -87,6 +87,16 @@ b)  Load the data for both years into R. Check the type of the count
     not numeric? Fix the problem in an appropriate manner, it is OK if
     some of the counts are inaccurate because of this. Explain your
     solution and the repercussions.
+    
+    ```{r}
+vornamen2023 <- read.csv("vornamen-muenchen-2023.csv")
+vornamen2022 <- read.csv("open_data_portal_2022.csv")
+
+vornamen2022$Anzahl <- as.numeric(gsub("4 oder weniger", 4, vornamen2022$Anzahl))
+vornamen2023$Anzahl <- as.numeric(gsub("4 oder weniger", 4, vornamen2023$Anzahl))
+```
+
+The count variable is not numeric because there is a type of entry called "4 oder weniger" (4 or less) that forced this variable to be stored in character in R. To fix this issue, we can change all of such observations to 4. This could help R to identify the variable to be a numeric one. However, the drawback is we neglected the possibilty that the value could be other numbers including 1, 2, or 3.
 
 c)  Calculate the total number of babies born in Munich in 2022
     and 2023. Which year had the bigger baby-boom?
