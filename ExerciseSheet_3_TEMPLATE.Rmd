@@ -100,6 +100,13 @@ The count variable is not numeric because there is a type of entry called "4 ode
 
 c)  Calculate the total number of babies born in Munich in 2022
     and 2023. Which year had the bigger baby-boom?
+    
+    ```{r}
+sum(vornamen2022$Anzahl)
+sum(vornamen2023$Anzahl)    
+```
+
+The total number of babies born in Munich in 2022 and 2023 is 25199 and 24229, respectively. 2022 had the bigger baby-room.
 
 d)  Add a new column `year` to both datasets which holds the correct
     year for each.
