@@ -126,6 +126,15 @@ vornamen <- bind_rows(vornamen2022, vornamen2023)
 f)  Combine the counts for same names to determine the most popular
     names across both years. Print out the top 10 names in a nicely
     formatted table for both years. Include a table caption.
+    
+```{r}
+library(knitr)
+vornamen %>% group_by(year, Vorname) %>% 
+    summarise(sum = sum(Anzahl)) %>% 
+    group_by(year) %>% 
+    slice_max(order_by = sum, n = 10) %>% 
+    kable(caption = "Top 10 names in Munich for 2022 and 2023")
+```
 
 ## Exercise 4: Open Analysis (4 points)
 
