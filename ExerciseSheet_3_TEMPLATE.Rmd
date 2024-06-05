@@ -110,6 +110,11 @@ The total number of babies born in Munich in 2022 and 2023 is 25199 and 24229, r
 
 d)  Add a new column `year` to both datasets which holds the correct
     year for each.
+    
+    ```{r}
+vornamen2022$year <- 2022
+vornamen2023$year <- 2023
+```
 
 e)  Combine both datasets into one using `bind_rows()`.
 
